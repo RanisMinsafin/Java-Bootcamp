@@ -195,7 +195,6 @@ $ java Program
   D   A   S   W   L   K   O   T   E   R
 ```
 
-# Chapter IX
 ### Exercise 05 – Schedule
 
 Exercise 05: Schedule ||
