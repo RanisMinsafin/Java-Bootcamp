@@ -22,11 +22,11 @@ Even NASA was engaged in the problem investigation.
 
 Below is the number of defects found in the controller software:
 
-![table_a.8-8](misc/images/table_a.8-8.png)
+![table_a.8-8](images/table_a.8-8.png)
 
 And this content is not safe to view:
 
-![table_a.8-9](misc/images/table_a.8-9.png)
+![table_a.8-9](images/table_a.8-9.png)
 
 # Chapter II
 ### General Rules
@@ -81,7 +81,7 @@ The program shall generate a random map with obstacles. Both player and its enem
 
 Example of a generated map:
 
-![map](misc/images/map.png)
+![map](images/map.png)
 
 **Designations**: <br>
 `o` - position of a player (program user) on the map.<br>
