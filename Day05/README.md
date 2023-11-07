@@ -27,7 +27,7 @@ As you know, relational databases consist of a set of linked tables. Each table 
 
 To solve this problem, up-to-date DBMS use an index mechanism. BTree data structure is an implementation of index concept.
 
-![BTree](misc/images/btree.png)
+![BTree](images/btree.png)
 
 This index may be used for a column of a table. Since a tree is always balanced, searching for any value takes the same amount of time.
 
