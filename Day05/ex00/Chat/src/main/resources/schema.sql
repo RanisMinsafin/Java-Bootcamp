@@ -1,46 +1,36 @@
-CREATE TABLE users (
-    user_id INT PRIMARY KEY,
-    login VARCHAR NOT NULL,
-    password VARCHAR NOT NULL
+drop schema if exists chat cascade;
+create schema if not exists chat;
+
+create table chat.users
+(
+    user_id  serial primary key,
+    user_login    varchar(16) unique not null,
+    user_password varchar(16)        not null
 );
 
-CREATE TABLE chatrooms (
-    chatroom_id INT PRIMARY KEY,
-    chatroom_name VARCHAR NOT NULL,
-    owner_id INT NOT NULL,
-    FOREIGN KEY (owner_id) REFERENCES users (user_id)
+create table chat.chatroom
+(
+    chatroom_id    serial primary key,
+    chatroom_name           varchar(16) unique not null,
+    chatroom_owner int,
+    foreign key (chatroom_owner) references chat.users (user_id)
 );
 
-CREATE TABLE message (
-    message_id INT PRIMARY KEY,
-    message_author VARCHAR NOT NULL,
-    chatroom_id INT NOT NULL,
-    message_text VARCHAR NOT NULL,
-    message_datetime date NOT NULL,
-    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id)
+create table chat.message
+(
+    message_id        serial primary key,
+    message_author    int,
+    message_room      int,
+    message_text      text      not null,
+    message_date_time timestamp not null,
+    foreign key (message_author) references chat.users (user_id),
+    foreign key (message_room) references chat.chatroom (chatroom_id)
 );
 
-CREATE TABLE user_chatrooms (
-    user_id INT NOT NULL,
-    chatroom_id INT NOT NULL,
-    PRIMARY KEY (user_id, chatroom_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id)
+create table chat.user_chatrooms
+(
+    user_id int,
+    chatroom_id int,
+    foreign key (user_id) references chat.users(user_id),
+    foreign key (chatroom_id) references chat.chatroom(chatroom_id)
 );
-
-CREATE TABLE user_socializes (
-    chatroom_id INT NOT NULL,
-    user_id INT NOT NULL,
-    PRIMARY KEY (chatroom_id, user_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id)
-);
-
-CREATE TABLE chatroom_messages (
-    chatroom_id INT NOT NULL,
-    message_id INT NOT NULL,
-    PRIMARY KEY (chatroom_id, message_id),
-    FOREIGN KEY (chatroom_id) REFERENCES chatrooms (chatroom_id),
-    FOREIGN KEY (message_id) REFERENCES message (message_id)
-);
-
