@@ -18,12 +18,28 @@ public class User {
         return login;
     }
 
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public ArrayList<Chatroom> getUserChatRooms() {
         return userChatRooms;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login != null ? login.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (userChatRooms != null ? userChatRooms.hashCode() : 0);
+        return result;
     }
 
     @Override
@@ -41,9 +57,11 @@ public class User {
     }
 
     @Override
-    public int hashCode() {
-        int result = login != null ? login.hashCode() : 0;
-        result = 31 * result + (password!= null ? password.)
+    public String toString() {
+        return "User {login = " + (login != null ? login : "null") + "," +
+                " password = " + (password != null ? password : "null") + "," +
+                " userChatRooms = " + (userChatRooms != null ? userChatRooms.toString() : "null")
+                + "}";
     }
 }
     
