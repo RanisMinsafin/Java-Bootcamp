@@ -23,8 +23,8 @@ public class Main {
                     }
                 }
             }
-        } catch (SQLException e) {
-            System.out.println(e);
+        } catch (SQLException exception) {
+            System.out.println(exception);
         }
     }
 }
