@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="postgres@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>1116</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>1279</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
-      <StartupTime>1699628420</StartupTime>
+      <StartupTime>1699795491</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -806,8 +814,12 @@ false Zulu
 13471||10|C|G
 13471||-9223372036854775808|U|G
 13471||10|U|G</Grants>
-      <IntrospectionStateNumber>1117</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1279</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
+      <Relations>sequence|table|49610|49611|1
+sequence|table|49619|49620|1
+sequence|table|49633|49634|1
+</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <role id="4" parent="1" name="dariogla">
@@ -4208,24 +4220,298 @@ false Zulu
       <ValidatorName>fmgr_sql_validator</ValidatorName>
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
-    <schema id="261" parent="3" name="information_schema">
+    <schema id="261" parent="3" name="chat">
+      <IntrospectionStateNumber>1279</IntrospectionStateNumber>
+      <ObjectId>49609</ObjectId>
+      <StateNumber>1274</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </schema>
+    <schema id="262" parent="3" name="information_schema">
       <ObjectId>13471</ObjectId>
       <StateNumber>523</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <schema id="262" parent="3" name="pg_catalog">
+    <schema id="263" parent="3" name="pg_catalog">
       <Comment>system catalog schema</Comment>
       <ObjectId>11</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <schema id="263" parent="3" name="public">
+    <schema id="264" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1117</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1279</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
+    <sequence id="265" parent="261" name="chatroom_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>49619</ObjectId>
+      <StateNumber>1276</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="266" parent="261" name="message_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>49633</ObjectId>
+      <StateNumber>1277</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="267" parent="261" name="users_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>49610</ObjectId>
+      <StateNumber>1275</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="268" parent="261" name="chatroom">
+      <ObjectId>49620</ObjectId>
+      <StateNumber>1276</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="269" parent="261" name="message">
+      <ObjectId>49634</ObjectId>
+      <StateNumber>1277</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="270" parent="261" name="user_chatrooms">
+      <ObjectId>49652</ObjectId>
+      <StateNumber>1278</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="271" parent="261" name="users">
+      <ObjectId>49611</ObjectId>
+      <StateNumber>1276</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="272" parent="268" name="id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;chat.chatroom_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>1276</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="273" parent="268" name="name">
+      <DataType>varchar(16)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>1276</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="274" parent="268" name="owner">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>1276</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="275" parent="268" name="chatroom_owner_fkey">
+      <ColNames>owner</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49628</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1276</StateNumber>
+      <RefTableId>49611</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="276" parent="268" name="chatroom_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49624</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1276</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="277" parent="268" name="chatroom_name_key">
+      <ColNames>name</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49626</ObjectId>
+      <StateNumber>1276</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="278" parent="268" name="chatroom_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49625</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1276</StateNumber>
+      <UnderlyingIndexId>49624</UnderlyingIndexId>
+    </key>
+    <key id="279" parent="268" name="chatroom_name_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49627</ObjectId>
+      <StateNumber>1276</StateNumber>
+      <UnderlyingIndexId>49626</UnderlyingIndexId>
+    </key>
+    <column id="280" parent="269" name="id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;chat.message_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>1277</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="281" parent="269" name="author">
+      <DataType>integer|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>1277</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="282" parent="269" name="room">
+      <DataType>integer|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>1277</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="283" parent="269" name="text">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>1277</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="284" parent="269" name="date_time">
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>1277</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <foreign-key id="285" parent="269" name="message_author_fkey">
+      <ColNames>author</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49642</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1277</StateNumber>
+      <RefTableId>49611</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="286" parent="269" name="message_room_fkey">
+      <ColNames>room</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49647</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1277</StateNumber>
+      <RefTableId>49620</RefTableId>
+      <RefTableName>chatroom</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="287" parent="269" name="message_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49640</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1277</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="288" parent="269" name="message_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49641</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1277</StateNumber>
+      <UnderlyingIndexId>49640</UnderlyingIndexId>
+    </key>
+    <column id="289" parent="270" name="user_id">
+      <DataType>integer|0s</DataType>
+      <Position>1</Position>
+      <StateNumber>1278</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="290" parent="270" name="chatroom_id">
+      <DataType>integer|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>1278</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="291" parent="270" name="user_chatrooms_user_id_fkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49655</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1278</StateNumber>
+      <RefTableId>49611</RefTableId>
+      <RefTableName>users</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="292" parent="270" name="user_chatrooms_chatroom_id_fkey">
+      <ColNames>chatroom_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49660</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1278</StateNumber>
+      <RefTableId>49620</RefTableId>
+      <RefTableName>chatroom</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <column id="293" parent="271" name="id">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>nextval(&apos;chat.users_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>1275</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="294" parent="271" name="login">
+      <DataType>varchar(16)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>1275</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="295" parent="271" name="password">
+      <DataType>varchar(16)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>1275</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="296" parent="271" name="users_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49615</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1275</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="297" parent="271" name="users_login_key">
+      <ColNames>login</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49617</ObjectId>
+      <StateNumber>1275</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="298" parent="271" name="users_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49616</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1275</StateNumber>
+      <UnderlyingIndexId>49615</UnderlyingIndexId>
+    </key>
+    <key id="299" parent="271" name="users_login_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>49618</ObjectId>
+      <StateNumber>1275</StateNumber>
+      <UnderlyingIndexId>49617</UnderlyingIndexId>
+    </key>
   </database-model>
 </dataSource>

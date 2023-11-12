@@ -1,57 +1,30 @@
 package edu.school21.chat.app;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
 
 public class Main {
-    private static Connection connection;
+    final private static String PROPERTIES_PATH = "src/main/resources/application.properties";
+    final private static Application application = new Application(PROPERTIES_PATH);
+    private static final String DB_URL = application.getPropertyValue("db.url");
+    private static final String DB_USER = application.getPropertyValue("db.login");
+    private static final String DB_PASSWORD = application.getPropertyValue("db.password");
 
     public static void main(String[] args) {
-        try {
-            connection = getNewConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
-            // Получаем данные из таблицы users
-            ResultSet resultSet = executeQuery("SELECT * FROM chat.users");
-
-            // Выводим результат
-            while (resultSet.next()) {
-                int userId =resultSet.getInt(1);
-                String login = resultSet.getString("1");
-                String password = resultSet.getString("1");
-
-                System.out.println("User ID: " + userId + ", Login: " + login + ", Password: " + password);
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+            String query = "select * from chat.users";
+            try (Statement statement = connection.createStatement()) {
+                try (ResultSet resultSet = statement.executeQuery(query)) {
+                    while (resultSet.next()) {
+                        int id = resultSet.getInt("id");
+                        String login = resultSet.getString("login");
+                        String password = resultSet.getString("password");
+                        System.out.println("ID: " + id + ", Login: " + login + ", Password: " + password);
+                    }
+                }
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            System.out.println(e);
         }
-    }
-
-    private static ResultSet executeQuery(String query) throws SQLException {
-        Statement statement = connection.createStatement();
-        return statement.executeQuery(query);
-    }
-
-    private static void close() throws SQLException {
-        connection.close();
-    }
-
-    public static Connection getNewConnection() throws SQLException {
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "";
-        String passwd = "";
-        return DriverManager.getConnection(url, user, passwd);
     }
 }

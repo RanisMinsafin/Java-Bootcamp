@@ -34,7 +34,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>edu.school21.chat.Main</mainClass>
+                            <mainClass>edu.school21.chat.app.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
