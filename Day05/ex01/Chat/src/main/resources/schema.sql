@@ -12,19 +12,19 @@ create table chat.chatroom
 (
     id    serial primary key,
     name           varchar(16) unique not null,
-    owner int,
-    foreign key (owner) references chat.users (id)
+    owner_id int,
+    foreign key (owner_id) references chat.users (id)
 );
 
 create table chat.message
 (
     id        serial primary key,
-    author    int,
-    room      int,
+    author_id    int,
+    room_id      int,
     text      text      not null,
     date_time timestamp not null,
-    foreign key (author) references chat.users (id),
-    foreign key (room) references chat.chatroom (id)
+    foreign key (author_id) references chat.users (id),
+    foreign key (room_id) references chat.chatroom (id)
 );
 
 create table chat.user_chatrooms

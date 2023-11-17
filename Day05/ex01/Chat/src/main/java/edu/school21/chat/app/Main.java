@@ -1,27 +1,23 @@
 package edu.school21.chat.app;
 
 
+import edu.school21.chat.repository.MessagesRepositoryJdbcImpl;
+
 import java.sql.*;
+import java.util.Scanner;
 
 public class Main {
-    final private static String PROPERTIES_PATH = "src/main/resources/application.properties";
-    final private static Application application = new Application(PROPERTIES_PATH);
-    private static final String DB_URL = application.getPropertyValue("db.url");
-    private static final String DB_USER = application.getPropertyValue("db.login");
-    private static final String DB_PASSWORD = application.getPropertyValue("db.password");
-
     public static void main(String[] args) {
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String query = "select * from chat.users";
-            try (Statement statement = connection.createStatement()) {
-                try (ResultSet resultSet = statement.executeQuery(query)) {
-                    while (resultSet.next()) {
-                        int id = resultSet.getInt("id");
-                        String login = resultSet.getString("login");
-                        String password = resultSet.getString("password");
-                        System.out.println("ID: " + id + ", Login: " + login + ", Password: " + password);
-                    }
+        try (Scanner scanner = new Scanner(System.in)) {
+            MessagesRepositoryJdbcImpl repository = new MessagesRepositoryJdbcImpl(DatabaseConnector.start());
+            while(true){
+                System.out.println("Enter a message ID");
+                String line = scanner.next();
+                if(line.equals("exit")){
+                    break;
                 }
+                int id = Integer.parseInt(line);
+                repository.findById(id);
             }
         } catch (SQLException exception) {
             System.out.println(exception);
