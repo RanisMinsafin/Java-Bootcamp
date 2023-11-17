@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="dariogla@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.48">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -811,6 +811,10 @@ false Zulu
 13471||10|U|G</Grants>
       <IntrospectionStateNumber>1292</IntrospectionStateNumber>
       <ObjectId>16385</ObjectId>
+      <Relations>sequence|table|49666|49667|1
+sequence|table|49675|49676|1
+sequence|table|49689|49690|1
+</Relations>
       <OwnerName>dariogla</OwnerName>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -4242,26 +4246,20 @@ false Zulu
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="265" parent="261" name="chatroom_id_seq">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <ObjectId>49675</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
       <StateNumber>1289</StateNumber>
       <OwnerName>dariogla</OwnerName>
     </sequence>
     <sequence id="266" parent="261" name="message_id_seq">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <ObjectId>49689</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
       <StateNumber>1290</StateNumber>
       <OwnerName>dariogla</OwnerName>
     </sequence>
     <sequence id="267" parent="261" name="users_id_seq">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <ObjectId>49666</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
       <StateNumber>1288</StateNumber>
       <OwnerName>dariogla</OwnerName>
     </sequence>
@@ -4290,23 +4288,22 @@ false Zulu
       <OwnerName>dariogla</OwnerName>
     </table>
     <column id="272" parent="268" name="id">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;chat.chatroom_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1289</StateNumber>
-      <SequenceId>49675</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="273" parent="268" name="name">
-      <DasType>varchar(16)|0s</DasType>
+      <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1289</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="274" parent="268" name="owner">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>1289</StateNumber>
       <TypeId>23</TypeId>
@@ -4356,35 +4353,34 @@ false Zulu
       <UnderlyingIndexId>49682</UnderlyingIndexId>
     </key>
     <column id="280" parent="269" name="id">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;chat.message_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1290</StateNumber>
-      <SequenceId>49689</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="281" parent="269" name="author">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <Position>2</Position>
       <StateNumber>1290</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="282" parent="269" name="room">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>1290</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="283" parent="269" name="text">
-      <DasType>text|0s</DasType>
+      <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1290</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="284" parent="269" name="date_time">
-      <DasType>timestamp|0s</DasType>
+      <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1290</StateNumber>
@@ -4429,13 +4425,13 @@ false Zulu
       <UnderlyingIndexId>49696</UnderlyingIndexId>
     </key>
     <column id="289" parent="270" name="user_id">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <Position>1</Position>
       <StateNumber>1291</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="290" parent="270" name="chatroom_id">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <Position>2</Position>
       <StateNumber>1291</StateNumber>
       <TypeId>23</TypeId>
@@ -4463,23 +4459,22 @@ false Zulu
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <column id="293" parent="271" name="id">
-      <DasType>integer|0s</DasType>
+      <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;chat.users_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1288</StateNumber>
-      <SequenceId>49666</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="294" parent="271" name="login">
-      <DasType>varchar(16)|0s</DasType>
+      <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1288</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="295" parent="271" name="password">
-      <DasType>varchar(16)|0s</DasType>
+      <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1288</StateNumber>

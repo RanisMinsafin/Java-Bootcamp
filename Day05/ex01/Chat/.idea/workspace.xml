@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cb1b480-ca72-4856-a42e-606600cda484" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/chat.WJMuAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3debb5a-47b9-4be4-b44e-0629df80a6c4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3debb5a-47b9-4be4-b44e-0629df80a6c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school21/chat/repository/MessagesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school21/chat/repository/MessagesRepositoryJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/chat.WJMuAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/dataSources/7ea2b312-20ec-40bd-b7ae-b3801fddc1c6/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex00/Chat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ex00/Chat/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -46,34 +49,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ranis/MyProjects/Java/Java_Bootcamp/Day05/ex00/Chat",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dariogla/MyProjects/Java-Bootcamp/Day05/ex01/Chat&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/edu/school21/chat/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.schema.sql">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.school21.chat.app.Main" />
       <module name="chat" />
@@ -96,6 +99,19 @@
       <script-file value="$PROJECT_DIR$/src/main/resources/schema.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Chat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Chat" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -121,8 +137,11 @@
       <workItem from="1699782891272" duration="46000" />
       <workItem from="1699782940674" duration="5551000" />
       <workItem from="1699795179480" duration="1758000" />
-      <workItem from="1699798134401" duration="4610000" />
-      <workItem from="1699899621928" duration="1113000" />
+      <workItem from="1699798134401" duration="5198000" />
+      <workItem from="1699978938518" duration="249000" />
+      <workItem from="1699979201137" duration="207000" />
+      <workItem from="1699980872567" duration="1211000" />
+      <workItem from="1699987465270" duration="2167000" />
     </task>
     <servers />
   </component>
