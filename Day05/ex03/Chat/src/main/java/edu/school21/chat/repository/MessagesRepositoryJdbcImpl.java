@@ -21,7 +21,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
     @Override
     public Optional<Message> findMessageById(int id) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_MESSAGE.QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_MESSAGE.getQuery())) {
             preparedStatement.setInt(1, id);
             ResultSet result = preparedStatement.executeQuery();
             result.next();
@@ -45,7 +45,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
     }
 
     public User findUserById(int id) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER.QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER.getQuery())) {
             preparedStatement.setInt(1, id);
             ResultSet result = preparedStatement.executeQuery();
             result.next();
@@ -60,7 +60,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
     }
 
     public Chatroom findRoomById(int id) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_ROOM.QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(FIND_ROOM.getQuery())) {
             preparedStatement.setInt(1, id);
             ResultSet result = preparedStatement.executeQuery();
             result.next();
@@ -76,7 +76,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
     @Override
     public void saveMessage(Message message) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(SAVE.QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SAVE.getQuery())) {
             checkMessage(message);
 
             preparedStatement.setInt(1, message.getCreator().getId());
@@ -112,7 +112,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
     @Override
     public void updateMessage(Message message) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE.QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE.getQuery())) {
             if (message.getText() != null) {
                 preparedStatement.setString(1, message.getText());
             } else {

@@ -7,9 +7,13 @@ public enum Query {
     UPDATE("update chat.message set text = ?, date_time = ? where id = ?"),
     SAVE("insert into chat.message (author_id, room_id, text, date_time) VALUES (?, ?, ?, ?) returning id");
 
-    String QUERY;
+    private final String QUERY;
 
     Query(String QUERY) {
         this.QUERY = QUERY;
+    }
+
+    public String getQuery() {
+        return QUERY;
     }
 }
