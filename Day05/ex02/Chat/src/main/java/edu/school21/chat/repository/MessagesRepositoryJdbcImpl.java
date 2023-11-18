@@ -83,13 +83,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
     public void saveMessage(Message message) {
         String query = "insert into chat.message (author_id, room_id, text, date_time) VALUES (?, ?, ?, ?) returning id";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            if (message.getCreator() == null || findUserById(message.getCreator().getId()) == null) {
-                throw new NotSavedSubEntityException("Non existing user id");
-            }
-            if (message.getRoom() == null || findRoomById(message.getRoom().getId()) == null) {
-                throw new NotSavedSubEntityException("Non existing room id");
-            }
-
+            checkMessage(message);
             preparedStatement.setInt(1, message.getCreator().getId());
             preparedStatement.setInt(2, message.getRoom().getId());
             preparedStatement.setString(3, message.getText());
@@ -103,6 +97,21 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
             }
         } catch (SQLException exception) {
             System.out.println(exception);
+        }
+    }
+
+    private void checkMessage(Message message){
+        if (message.getCreator() == null || findUserById(message.getCreator().getId()) == null) {
+            throw new NotSavedSubEntityException("Non existing user id");
+        }
+        if (message.getRoom() == null || findRoomById(message.getRoom().getId()) == null) {
+            throw new NotSavedSubEntityException("Non existing room id");
+        }
+        if(message.getText() == null || message.getText().length() < 1){
+            throw new NotSavedSubEntityException("Non existing text");
+        }
+        if(message.getDateTime() == null){
+            throw new NotSavedSubEntityException("Non existing date");
         }
     }
 }
