@@ -1,0 +1,10 @@
+edu/school21/chat/app/Application.class
+edu/school21/chat/models/Message.class
+edu/school21/chat/app/Main.class
+edu/school21/chat/models/User.class
+edu/school21/chat/models/Chatroom.class
+edu/school21/chat/app/PropertiesLoader.class
+edu/school21/chat/repository/NotSavedSubEntityException.class
+edu/school21/chat/app/DatabaseConnector.class
+edu/school21/chat/repository/MessagesRepository.class
+edu/school21/chat/repository/MessagesRepositoryJdbcImpl.class
