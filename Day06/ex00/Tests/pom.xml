@@ -26,7 +26,6 @@
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -35,11 +34,10 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
-                        <include>test.java.edu.school21.numbers.NumberWorkerTest</include>
+                        <include>numbers.NumberWorkerTest</include>
                     </includes>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
