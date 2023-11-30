@@ -1,75 +1,6 @@
 # Day 06 – Java bootcamp
 ### JUnit/Mockito
 
-*Takeaways: Today you will learn the basics of module and integration testing*
-
-# Contents
-1. [Chapter I](#chapter-i) \
-  1.1. [Preamble](#preamble)
-2. [Chapter II](#chapter-ii) \
-  2.1. [General Rules](#general-rules)
-3. [Chapter III](#chapter-iii) \
-  3.1. [Rules of the Day](#rules-of-the-day)
-4. [Chapter IV](#chapter-iv) \
-  4.1. [Exercise 00 – First Tests](#exercise-00-first-tests)
-5. [Chapter V](#chapter-v) \
-  5.1. [Exercise 01 – Embedded DataBase](#exercise-01-embedded-database)
-6. [Chapter VI](#chapter-vi) \
-  6.1. [Exercise 02 – Test for JDBC Repository](#exercise-02-test-for-jdbc-repository)
-7. [Chapter VII](#chapter-vii) \
-  7.1. [Exercise 03 – Test for Service](#exercise-03-test-for-service)
-
-# Chapter I
-### Preamble
-Module and integration tests allow a programmer to ensure correct operation of programs they create. Those testing methods are performed automatically.
-
-Thus, your goal is not just to write a correct code, but also create code to check the validity of your implementation.
-
-Module tests in Java are classes that contain several testing methods for public methods of classes under test. Each module test class shall check the functionality of a single class only. Such tests allow to pinpoint errors accurately. To perform tests without specific dependencies, stub objects with temporary implementation are used.
-
-Unlike module tests, integration tests enable checking bundles of various components.
-
-Below are several best practices for module and integration testing:
-1. Use adequate names for testing methods.
-2. Consider different situations.
-3. Ensure that tests cover at least 80% of code.
-4. Each test method should contain a small portion of code and be executed quickly.
-5. Test methods must be isolated from one another and have no side effects.
-
-# Chapter II
-### General Rules
-- Use this page as the only reference. Do not listen to any rumors and speculations about how to prepare your solution.
-- Now there is only one Java version for you, 1.8. Make sure that compiler and interpreter of this version are installed on your machine.
-- You can use IDE to write and debug the source code.
-- The code is read more often than written. Read carefully the [document](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf) where code formatting rules are given. When performing each task, make sure you follow the generally accepted [Oracle standards](https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html).
-
-- Comments are not allowed in the source code of your solution. They make it difficult to read the code.
-- Pay attention to the permissions of your files and directories.
-- To be assessed, your solution must be in your GIT repository.
-- Your solutions will be evaluated by your bootcamp mates.
-- You should not leave in your "src" directory any other file than those explicitly specified by the exercise instructions. It is recommended that you modify your .gitignore to avoid accidents.
-- When you need to get precise output in your programs, it is forbidden to display a precalculated output instead of performing the exercise correctly.
-- Have a question? Ask your neighbor on the right. Otherwise, try with your neighbor on the left.
-- Your reference manual: mates / Internet / Google. And one more thing. There's an answer to any question you may have on Stackoverflow. Learn how to ask questions correctly.
-- Read the examples carefully. They may require things that are not otherwise specified in the subject.
-- Use System.out for output.
-- And may the Force be with you!
-- Never leave that till tomorrow which you can do today ;)
-
-# Chapter III
-### Rules of the Day
-- Use JUnit 5 framework in all tasks
-- Use the following dependencies and plugins to ensure correct operation:
-    -	maven-surefire-plugin
-     -	junit-jupiter-engine
-    -	junit-jupiter-params
-     -	junit-jupiter-api
-- All tests must be launchable by running mvn clean compile test command
-- Source code of the tested class must be fully covered in all implemented tests. Below is an example of a full coverage demonstration with IntelliJ IDEA for Exercise 00:
-
-![test](misc/images/test.png)
-
-# Chapter IV
 ### Exercise 00 – First Tests
 
 Exercise 00: First Tests ||
@@ -124,7 +55,6 @@ We also need to create NumberWorkerTest class that implements the module testing
                 -	data.csv
     - pom.xml
 
-# Chapter V
 ### Exercise 01 – Embedded DataBase
 
 Exercise 01: Embedded DataBase ||
@@ -165,7 +95,6 @@ Also create EmbeddedDataSourceTest class. In this class, implement init() method
                 -	data.sql
     - pom.xml
 
-# Chapter VI
 ### Exercise 02 – Test for JDBC Repository
 
 Exercise 02: Test for JDBC Repository ||
@@ -229,7 +158,6 @@ class ProductsRepositoryJdbcImplTest {
                 -	data.sql
     - pom.xml
 
-# Chapter VII
 ### Exercise 03 – Test for Service
 
 Exercise 03: Test for Service ||
