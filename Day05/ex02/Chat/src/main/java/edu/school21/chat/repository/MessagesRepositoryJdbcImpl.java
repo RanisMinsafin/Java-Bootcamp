@@ -84,6 +84,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
         String query = "insert into chat.message (author_id, room_id, text, date_time) VALUES (?, ?, ?, ?) returning id";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             checkMessage(message);
+
             preparedStatement.setInt(1, message.getCreator().getId());
             preparedStatement.setInt(2, message.getRoom().getId());
             preparedStatement.setString(3, message.getText());
