@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33f5c6c9-ac2b-42f7-90f3-8bd8119ecc9a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2a2Y269OK7UpFUkAznSizpNui4e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ranis/MyProjects/Java/Java_Bootcamp/Day09/ex01/Chat/SocketClient",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/ranis/MyProjects/Java/Java_Bootcamp.Day09-1/src/ex00/Chat/SocketClient/src/main/java/edu/school21/sockets/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.school21.sockets.app.Main" />
+      <module name="SocketClient" />
+      <option name="PROGRAM_PARAMETERS" value="--server-port=8082" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.school21.sockets.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33f5c6c9-ac2b-42f7-90f3-8bd8119ecc9a" name="Changes" comment="" />
+      <created>1703517930974</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703517930974</updated>
+      <workItem from="1703517931990" duration="6467000" />
+      <workItem from="1703533303470" duration="1912000" />
+      <workItem from="1703535815645" duration="280000" />
+      <workItem from="1703536227731" duration="24000" />
+      <workItem from="1703536314216" duration="168000" />
+      <workItem from="1703538990047" duration="10000" />
+      <workItem from="1703539017795" duration="595000" />
+      <workItem from="1703539788826" duration="15000" />
+      <workItem from="1703539831882" duration="1008000" />
+      <workItem from="1703612180791" duration="873000" />
+      <workItem from="1703616935841" duration="1080000" />
+      <workItem from="1703618035505" duration="19214000" />
+      <workItem from="1703938974135" duration="691000" />
+      <workItem from="1704145248947" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

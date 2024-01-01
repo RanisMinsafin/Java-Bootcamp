@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f1338118-e2d4-4ae1-84b6-9722efa77c7c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2ZwjRSiIRgfVgGZPnY0GjXYhzUK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ranis/MyProjects/Java/Java_Bootcamp/Day09/ex01/Chat/SocketServer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/ranis/MyProjects/Java/Java_Bootcamp.Day09-1/src/ex00/Chat/SocketServer/src/main/java/edu/school21/sockets/Main.java",
+    "settings.editor.selected.configurable": "editing.templates",
+    "spring.configuration.checksum": "0f254ae39ad3fe9b4005f76cffc888e0",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "4bc2c8b2-da2c-4c37-8eff-41080b266c0e",
+      "4bc2c8b2-da2c-4c37-8eff-41080b266c0e/database/\"dariogla\"/schema/\"service\""
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.school21.sockets.app.Main" />
+      <module name="SocketServer" />
+      <option name="PROGRAM_PARAMETERS" value="--port=8082" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.school21.sockets.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="4bc2c8b2-da2c-4c37-8eff-41080b266c0e" namespace="database/&quot;dariogla&quot;/schema/&quot;service&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Database Script.schema.sql" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Database Script.schema.sql" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1338118-e2d4-4ae1-84b6-9722efa77c7c" name="Changes" comment="" />
+      <created>1703340027354</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703340027354</updated>
+      <workItem from="1703340028369" duration="6588000" />
+      <workItem from="1703436255192" duration="590000" />
+      <workItem from="1703513303437" duration="4323000" />
+      <workItem from="1703519360407" duration="8185000" />
+      <workItem from="1703532477778" duration="595000" />
+      <workItem from="1703533082130" duration="2088000" />
+      <workItem from="1703536581798" duration="1369000" />
+      <workItem from="1703539003545" duration="609000" />
+      <workItem from="1703539733245" duration="69000" />
+      <workItem from="1703539820338" duration="3737000" />
+      <workItem from="1703612267542" duration="2056000" />
+      <workItem from="1703616766602" duration="24610000" />
+      <workItem from="1703938883904" duration="780000" />
+      <workItem from="1704145274375" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
